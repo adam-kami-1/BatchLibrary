@@ -8,9 +8,14 @@ REM %1 - Result variable name
 REM %2 - Time in hundredths of a second
 REM %3 - Format of time:
 REM        -h: [[[1 day[s] ]2 h ]3 m ]4,5 s   (default)
-REM        -m: [1 ]02:03:04,50
+REM        -m: [1 ]02:03:04,50         ^
+REM                  ^  ^  ^           |
+REM                  |  |  |           |
+REM sTime -----------+--+  +-----------+----sDecimal
 REM ===========
 setLocal
+call GetRegValue sDecimal "HKCU\Control Panel\International" sDecimal
+call GetRegValue sTime "HKCU\Control Panel\International" sTime
 set $w=%2
 set /a "$hs=%$w% %% 100"
 set /a "$w=(%$w% - %$hs%) / 100"
@@ -32,15 +37,15 @@ if /i "%~3" == "-m" (
   if %$days% equ 1 set "$result=1 day "
 )
 if /i "%~3" == "-m" (
-  set $result=%$result%%$HH:~-2%:%$MM:~-2%:%$SS:~-2%,%$hs:~-2%
+  set $result=%$result%%$HH:~-2%%sTime%%$MM:~-2%%sTime%%$SS:~-2%%sDecimal%%$hs:~-2%
 ) else (
   if %$HH% gtr 0 (
-    set $result=%$result%%$HH% h %$MM% m %$SS%,%$hs% s
+    set $result=%$result%%$HH% h %$MM% m %$SS%%sDecimal%%$hs% s
   ) else (
     if %$MM% gtr 0 (
-      set $result=%$result%%$MM% m %$SS%,%$hs% s
+      set $result=%$result%%$MM% m %$SS%%sDecimal%%$hs% s
     ) else (
-      set $result=%$result%%$SS%,%$hs% s
+      set $result=%$result%%$SS%%sDecimal%%$hs% s
     )
   )
 )
