@@ -23,9 +23,9 @@ Convert time in hundredths of a second in to a string representation.
 
 
 ### Parameters
-1 - Result variable name, optional.
-2 - Time in hundredths of a second.
-3 - Format of a time, optional. Allowed values:
+1. Result variable name, optional.
+2. Time in hundredths of a second.
+3. Format of a time, optional. Allowed values:
   * -h (default) human readable format: 1 day 2 h 34 m 56.78 s
   * -m strict machine readable format: 1 02:34:56.78
 
@@ -64,6 +64,33 @@ None
 
 
 
+TimeDiff.bat
+-----------
+
+
+
+### Description
+Calculates difference between times gives as two parameters.
+
+
+
+### Parameters
+1. First time in format: HH:MM:SS,hs or HH:MM:SS.hs.
+2. Second time in format: HH:MM:SS,hs or HH:MM:SS.hs.
+
+The difference Second - First time is returned in hundredths of a second.
+It is assumed that both times First and Second are in the same day, or
+the second is in the next day but then have to be smaller than First.
+
+
+### Returns
+ERRORLEVEL    - Number of hundredths of a second.
+
+
+<hr />
+
+
+
 TimeInHs.bat
 -----------
 
@@ -71,12 +98,12 @@ TimeInHs.bat
 
 ### Description
 Convert time in system long time format into integer containing
-number of hundreths of a second counted from midnight.
+number of hundredths of a second counted from midnight.
 
 
 
 ### Parameters
-1 - Time in system long time format.
+1. Time in system long time format.
 
 Supported time formats:
 - HH:mm:ss,hs
@@ -91,7 +118,7 @@ For now does not support time in 12 hours format with AM/PM.
 
 
 ### Returns
-ERRORLEVEL    - Number of hundreths of a second counted from midnight.
+ERRORLEVEL    - Number of hundredths of a second counted from midnight.
 <hr />
 
 
@@ -107,7 +134,7 @@ Get the Windows version.
 
 
 ### Parameters
-1 - Result variable name, optional. If not given VERSION is used.
+1. Result variable name, optional. If not given VERSION is used.
 
 
 
