@@ -3,6 +3,7 @@
 REM ============================================================================
 :DoTest
 REM ===========
+if "%$VERBOSE%" == "" set $VERBOSE=off
 if "%~1" == "[--]" goto :test-%2
 REM ===========
 REM Parameters are described in :DoTest-usage
@@ -177,7 +178,7 @@ REM %7 - Third input value
 set $INPUT3=%~7
 REM ===========
 call Log.bat "########################################"
-call Log.bat Test "%$NAME%"
+call Log.bat Test: %$NAME%
 call %$SUB% "%$INPUT1%" "%$INPUT2%" "%$INPUT3%"
 set $RESULT=%ERRORLEVEL%
 call :test-Check-Result %$CMP%
@@ -209,7 +210,7 @@ REM %7 - Third input value
 set $INPUT3=%~7
 REM ===========
 call Log.bat "########################################"
-call Log.bat Test "%$NAME%"
+call Log.bat Test: %$NAME%
 call %$SUB% $RESULT "%$INPUT1%" "%$INPUT2%" "%$INPUT3%"
 call :test-Check-Result %$CMP%
 endlocal & exit /b %ERRORLEVEL%
