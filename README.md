@@ -23,11 +23,11 @@ Convert time in hundredths of a second in to a string representation.
 
 
 ### Parameters
-1. Result variable name, optional.
+1. Result variable name.
 2. Time in hundredths of a second.
 3. Format of a time, optional. Allowed values:
-  * -h (default) human readable format: 1 day 2 h 34 m 56.78 s
-  * -m strict machine readable format: 1 02:34:56.78
+    * -h (default) human readable format: 1 day 2 h 34 m 56.78 s
+    * -m strict machine readable format: 1 02:34:56.78
 
 Decimal separator before hundredths of a second and a separator between hours, minutes, and seconds
 depends on user settings in Windows.

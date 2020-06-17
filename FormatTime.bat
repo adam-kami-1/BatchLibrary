@@ -31,21 +31,21 @@ if /i "%~3" == "-m" (
   set $HH=0%$HH%
   set $MM=0%$MM%
   set $SS=0%$SS%
-  set $hs=0%$hs%
 ) else (
   if %$days% gtr 1 set "$result=%$days% days "
   if %$days% equ 1 set "$result=1 day "
 )
+set $hs=0%$hs%
 if /i "%~3" == "-m" (
   set $result=%$result%%$HH:~-2%%sTime%%$MM:~-2%%sTime%%$SS:~-2%%sDecimal%%$hs:~-2%
 ) else (
   if %$HH% gtr 0 (
-    set $result=%$result%%$HH% h %$MM% m %$SS%%sDecimal%%$hs% s
+    set $result=%$result%%$HH% h %$MM% m %$SS%%sDecimal%%$hs:~-2% s
   ) else (
     if %$MM% gtr 0 (
-      set $result=%$result%%$MM% m %$SS%%sDecimal%%$hs% s
+      set $result=%$result%%$MM% m %$SS%%sDecimal%%$hs:~-2% s
     ) else (
-      set $result=%$result%%$SS%%sDecimal%%$hs% s
+      set $result=%$result%%$SS%%sDecimal%%$hs:~-2% s
     )
   )
 )
