@@ -48,6 +48,7 @@ REM ===========
 :DoTest-all
 REM Run all tests
 call :DoTest-run FormatTime
+call :DoTest-run HowLong
 call :DoTest-run Menu
 call :DoTest-run SelectDirectory
 call :DoTest-run SelectFile
@@ -59,10 +60,10 @@ goto :DoTest-report
 REM Not Yet Ready
 REM call :DoTest-run CreateShortcut
 REM call :DoTest-run GetPathPart
+REM call :DoTest-run GetRegValue
 REM call :DoTest-run Kill
 REM call :DoTest-run Run
-REM call :DoTest-run
-REM call :DoTest-run
+REM call :DoTest-run Which
 
 REM Unable to test automatically
 REM call :DoTest-run Log
@@ -90,6 +91,7 @@ echo 	testName	Individual test name to be run instead of all tests.
 echo;
 echo Alowed test names are:
 echo 	FormatTime
+echo 	HowLong
 echo 	Menu
 echo 	SelectFile
 echo 	SelectDirectory

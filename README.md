@@ -2,24 +2,31 @@
 Set of useful dos prompt scripts
 
 
+* [Batch scripts](#TOC_Batch_scripts)
+  * [FormatTime.bat](#TOC_FormatTime)
+  * [GetRegValue.bat](#TOC_GetRegValue)
+  * [HowLong.bat](#TOC_HowLong)
+  * [TimeDiff.bat](#TOC_TimeDiff)
+  * [TimeInHs.bat](#TOC_TimeInHs)
+  * [Version.bat](#TOC_Version)
 
 
+
+
+<a id="TOC_Batch_scripts"></a>
 Batch scripts
 =============
 
 
+
 <hr />
-
-
-
+<a id="TOC_FormatTime"></a>
 FormatTime.bat
 -----------
 
 
-
 ### Description
 Convert time in hundredths of a second in to a string representation.
-
 
 
 ### Parameters
@@ -32,22 +39,19 @@ Convert time in hundredths of a second in to a string representation.
 Decimal separator before hundredths of a second and a separator between hours, minutes, and seconds
 depends on user settings in Windows.
 
-
 ### Returns
 None
 
+
+
 <hr />
-
-
-
+<a id="TOC_GetRegValue"></a>
 GetRegValue.bat
 -----------
 
 
-
 ### Description
 Extract value from registry a a string.
-
 
 
 ### Parameters
@@ -56,22 +60,37 @@ Extract value from registry a a string.
 3 - Registry value name.
 
 
-
 ### Returns
 None
 
+
+
 <hr />
+<a id="TOC_HowLong"></a>
+HowLong.bat
+-----------
+
+
+### Description
+Run application or a script calculating real time used by it.
+
+
+### Parameters
+Command and its parameters required to run.
+
+### Returns
+ERRORLEVEL    - Number of hundredths of a second.
 
 
 
+<hr />
+<a id="TOC_TimeDiff"></a>
 TimeDiff.bat
 -----------
 
 
-
 ### Description
 Calculates difference between times gives as two parameters.
-
 
 
 ### Parameters
@@ -82,24 +101,20 @@ The difference Second - First time is returned in hundredths of a second.
 It is assumed that both times First and Second are in the same day, or
 the second is in the next day but then have to be smaller than First.
 
-
 ### Returns
 ERRORLEVEL    - Number of hundredths of a second.
 
 
+
 <hr />
-
-
-
+<a id="TOC_TimeInHs"></a>
 TimeInHs.bat
 -----------
-
 
 
 ### Description
 Convert time in system long time format into integer containing
 number of hundredths of a second counted from midnight.
-
 
 
 ### Parameters
@@ -116,26 +131,23 @@ Supported time formats:
 For now does not support time in 12 hours format with AM/PM.
 
 
-
 ### Returns
 ERRORLEVEL    - Number of hundredths of a second counted from midnight.
+
+
+
 <hr />
-
-
-
+<a id="TOC_Version"></a>
 Version.bat
 -----------
-
 
 
 ### Description
 Get the Windows version.
 
 
-
 ### Parameters
 1. Result variable name, optional. If not given VERSION is used.
-
 
 
 ### Returns
