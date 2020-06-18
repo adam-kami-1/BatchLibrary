@@ -5,6 +5,7 @@ Set of useful dos prompt scripts
 
 * [Batch scripts](#TOC_Batch_scripts)
   * [FormatTime.bat](#TOC_FormatTime)
+  * [GetPathPart.bat](#TOC_GetPathPart)
   * [GetRegValue.bat](#TOC_GetRegValue)
   * [HowLong.bat](#TOC_HowLong)
   * [Menu.bat](#TOC_Menu)
@@ -37,7 +38,6 @@ Following tests are not yet ready:
 * GetPathPart.bat
 * Kill.bat
 * Run.bat
-* Which.bat
 
 
 
@@ -78,7 +78,36 @@ depends on user settings in Windows.
 
 
 ### Returns
-Formatted time value in result variable name.
+Formatted time value in result variable.
+
+
+
+<a id="TOC_GetPathPart"><hr /></a>
+
+## GetPathPart.bat
+--------------------------------------------------------------------------------
+
+
+### Description
+Extract selected part of a path given as a parameter.
+
+
+### Parameters
+1 - Result variable name.
+2 - Path part code.
+    - f - *F*ully qualified path name
+    - d - *D*rive letter only
+    - p - *P*ath only
+    - n - File *n*ame without file extension or path
+    - x - File e*x*tension only
+    - a - File *a*ttributes
+    - t - File date/*t*ime
+    - z - File si*z*e
+3 - Input path.
+
+
+### Returns
+Extracted value in result variable.
 
 
 
@@ -99,7 +128,7 @@ Extract value from registry a a string.
 
 
 ### Returns
-Extracted value in result variable name.
+Extracted value in result variable.
 
 
 
@@ -142,26 +171,26 @@ Script used to initialize, build, run and clear simple text menu.
 1. Operation to exec by the script:
     - Init - Initialize menu
 
-        2. Name of temporary menu file.
-        3. Unique ASCII character, not present in menu items and values.
-           This is optional parameter. default value is "|".
+        - 2. Name of temporary menu file.
+        - 3. Unique ASCII character, not present in menu items and values.
+             This is optional parameter. default value is "|".
     - AddItem - Add single item to menu.
 
-        2. Name of temporary menu file.
-        3. Item value to be returned when item selected in menu.
-        4. Item description to be displayed in menu. Optional,
-           If not present then identical to item value.
+        - 2. Name of temporary menu file.
+        - 3. Item value to be returned when item selected in menu.
+        - 4. Item description to be displayed in menu. Optional,
+             If not present then identical to item value.
     - Select - Run menu, and select one of menu items.
 
-        2. Result variable name.
-        3. Name of temporary menu file.
-        4. Message
+        - 2. Result variable name.
+        - 3. Name of temporary menu file.
+        - 4. Message
     - Clear - Delete all temporary files created during initialization.
 
-        2. Name of temporary menu file.
+        - 2. Name of temporary menu file.
 
 ### Returns
-Selected item value in result variable name.
+Selected item value in result variable.
 
 
 
