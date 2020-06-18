@@ -7,6 +7,7 @@ Set of useful dos prompt scripts
   * [FormatTime.bat](#TOC_FormatTime)
   * [GetRegValue.bat](#TOC_GetRegValue)
   * [HowLong.bat](#TOC_HowLong)
+  * [Menu.bat](#TOC_Menu)
   * [Sleep.bat](#TOC_Sleep)
   * [TimeDiff.bat](#TOC_TimeDiff)
   * [TimeInHs.bat](#TOC_TimeInHs)
@@ -135,6 +136,39 @@ the second is in the next day but then have to be smaller than First.
 
 ### Returns
 ERRORLEVEL    - Number of hundredths of a second.
+
+
+
+<a id="TOC_Menu"><hr /></a>
+
+Menu.bat
+-----------------------------------------------
+
+
+### Description
+Script used to initialize, build, run and clear simple text menu.
+
+
+### Parameters
+1. Operation to exec by the script:
+    * Init - Initialize menu
+	    2. Name of temporary menu file.
+		3. Unique ASCII character, not present in menu items and values.
+		   This is optional parameter. default value is "|".
+	* AddItem - Add single item to menu.
+	    2. Name of temporary menu file.
+		3. Item value to be returned when item selected in menu.
+		4. Item description to be displayed in menu. Optional,
+		   If not present then identical to item value.
+	* Select - Run menu, and select one of menu items.
+		2. Result variable name.
+		3. Name of temporary menu file.
+		4. Message
+	* Clear - Delete all temporary files created during initialization.
+	    2. Name of temporary menu file.
+
+### Returns
+None
 
 
 
