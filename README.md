@@ -16,7 +16,7 @@ Set of useful dos prompt scripts
 
 
 <a id="TOC_Automatic_tests"></a>Automatic tests
-===============================================
+================================================================================
 
 Test are prepared for following scripts:
 
@@ -48,14 +48,14 @@ Following scripts are unable to test automatically
 
 
 <a id="TOC_Batch_scripts"></a>Batch scripts
-===========================================
+================================================================================
 
 
 
 <a id="TOC_FormatTime"><hr /></a>
 
-FormatTime.bat
------------------------------------------------
+## FormatTime.bat
+--------------------------------------------------------------------------------
 
 
 ### Description
@@ -72,15 +72,20 @@ Convert time in hundredths of a second in to a string representation.
 Decimal separator before hundredths of a second and a separator between hours, minutes, and seconds
 depends on user settings in Windows.
 
+
+### Depends
+[GetRegValue.bat](#TOC_GetRegValue)
+
+
 ### Returns
-None
+Formatted time value in result variable name.
 
 
 
 <a id="TOC_GetRegValue"><hr /></a>
 
-GetRegValue.bat
--------------------------------------------------
+## GetRegValue.bat
+--------------------------------------------------------------------------------
 
 
 ### Description
@@ -94,45 +99,29 @@ Extract value from registry a a string.
 
 
 ### Returns
-None
+Extracted value in result variable name.
 
 
 
 <a id="TOC_HowLong"><hr /></a>
 
-HowLong.bat
------------------------------------------
+## HowLong.bat
+--------------------------------------------------------------------------------
 
 
 ### Description
-Run application or a script calculating real time used by it.
+Run application or a script calculating real time used by it. It dsiplays
+used time in human readable format.
 
 
 ### Parameters
 Command and its parameters required to run.
 
-### Returns
-ERRORLEVEL    - Number of hundredths of a second.
 
+### Depends
+[FormatTime.bat](#TOC_FormatTime)
+[TimeDiff.bat](#TOC_TimeDiff)
 
-
-<a id="TOC_TimeDiff"><hr /></a>
-
-TimeDiff.bat
--------------------------------------------
-
-
-### Description
-Calculates difference between times gives as two parameters.
-
-
-### Parameters
-1. First time in format: HH:MM:SS,hs or HH:MM:SS.hs.
-2. Second time in format: HH:MM:SS,hs or HH:MM:SS.hs.
-
-The difference Second - First time is returned in hundredths of a second.
-It is assumed that both times First and Second are in the same day, or
-the second is in the next day but then have to be smaller than First.
 
 ### Returns
 ERRORLEVEL    - Number of hundredths of a second.
@@ -141,8 +130,8 @@ ERRORLEVEL    - Number of hundredths of a second.
 
 <a id="TOC_Menu"><hr /></a>
 
-Menu.bat
------------------------------------------------
+## Menu.bat
+--------------------------------------------------------------------------------
 
 
 ### Description
@@ -151,31 +140,35 @@ Script used to initialize, build, run and clear simple text menu.
 
 ### Parameters
 1. Operation to exec by the script:
-    * Init - Initialize menu
-	    2. Name of temporary menu file.
-		3. Unique ASCII character, not present in menu items and values.
-		   This is optional parameter. default value is "|".
-	* AddItem - Add single item to menu.
-	    2. Name of temporary menu file.
-		3. Item value to be returned when item selected in menu.
-		4. Item description to be displayed in menu. Optional,
-		   If not present then identical to item value.
-	* Select - Run menu, and select one of menu items.
-		2. Result variable name.
-		3. Name of temporary menu file.
-		4. Message
-	* Clear - Delete all temporary files created during initialization.
-	    2. Name of temporary menu file.
+    - Init - Initialize menu
+
+        2. Name of temporary menu file.
+        3. Unique ASCII character, not present in menu items and values.
+           This is optional parameter. default value is "|".
+    - AddItem - Add single item to menu.
+
+        2. Name of temporary menu file.
+        3. Item value to be returned when item selected in menu.
+        4. Item description to be displayed in menu. Optional,
+           If not present then identical to item value.
+    - Select - Run menu, and select one of menu items.
+
+        2. Result variable name.
+        3. Name of temporary menu file.
+        4. Message
+    - Clear - Delete all temporary files created during initialization.
+
+        2. Name of temporary menu file.
 
 ### Returns
-None
+Selected item value in result variable name.
 
 
 
 <a id="TOC_Sleep"><hr /></a>
 
-Sleep.bat
------------------------------------------------
+## Sleep.bat
+--------------------------------------------------------------------------------
 
 
 ### Description
@@ -190,10 +183,38 @@ None
 
 
 
+<a id="TOC_TimeDiff"><hr /></a>
+
+## TimeDiff.bat
+--------------------------------------------------------------------------------
+
+
+### Description
+Calculates difference between times gives as two parameters.
+
+
+### Parameters
+1. First time in format: HH:MM:SS,hs or HH:MM:SS.hs.
+2. Second time in format: HH:MM:SS,hs or HH:MM:SS.hs.
+
+The difference Second - First time is returned in hundredths of a second.
+It is assumed that both times First and Second are in the same day, or
+the second is in the next day but then have to be smaller than First.
+
+
+### Depends
+[TimeInHs.bat](#TOC_TimeInHs)
+
+
+### Returns
+ERRORLEVEL    - Number of hundredths of a second.
+
+
+
 <a id="TOC_TimeInHs"><hr /></a>
 
-TimeInHs.bat
--------------------------------------------
+## TimeInHs.bat
+--------------------------------------------------------------------------------
 
 
 ### Description
@@ -222,8 +243,8 @@ ERRORLEVEL    - Number of hundredths of a second counted from midnight.
 
 <a id="TOC_Version"><hr /></a>
 
-Version.bat
------------------------------------------
+## Version.bat
+--------------------------------------------------------------------------------
 
 
 ### Description
