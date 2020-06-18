@@ -47,28 +47,14 @@ goto :DoTest-report
 REM ===========
 :DoTest-all
 REM Run all tests
-call :DoTest-run FormatTime
-call :DoTest-run HowLong
-call :DoTest-run Menu
-call :DoTest-run SelectDirectory
-call :DoTest-run SelectFile
-call :DoTest-run Sleep
-call :DoTest-run TimeDiff
-call :DoTest-run TimeInHs
+for %%T in (*.bat) do (
+  if exist test\test-%%T (
+    echo Found file: %%T
+    echo Exists test: test\test-%%T
+    call :DoTest-run %%T
+  )
+)
 goto :DoTest-report
-
-REM Not Yet Ready
-REM call :DoTest-run CreateShortcut
-REM call :DoTest-run GetPathPart
-REM call :DoTest-run GetRegValue
-REM call :DoTest-run Kill
-REM call :DoTest-run Run
-REM call :DoTest-run Which
-
-REM Unable to test automatically
-REM call :DoTest-run Log
-REM call :DoTest-run LogSystem
-REM call :DoTest-run Version
 
 REM ===========
 :DoTest-report
@@ -88,16 +74,6 @@ echo;
 echo 	/?		Display this info and exit.
 echo 	/v		Verbose mode.
 echo 	testName	Individual test name to be run instead of all tests.
-echo;
-echo Alowed test names are:
-echo 	FormatTime
-echo 	HowLong
-echo 	Menu
-echo 	SelectFile
-echo 	SelectDirectory
-echo 	Sleep
-echo 	TimeInHs
-echo 	TimeDiff
 echo;
 endLocal
 goto :EOF
@@ -137,7 +113,8 @@ REM ============================================================================
 REM ===========
 setLocal
 REM %1 - Test name
-set $NAME=%~1
+call :GetPathPart $NAME n %~1
+REM set $NAME=%~1
 REM ===========
 call Log.bat
 if not exist "%$BIN_PATH%test\test-%$NAME%.bat" (
