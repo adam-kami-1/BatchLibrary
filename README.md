@@ -28,6 +28,7 @@ Test are prepared for following scripts:
 * Sleep.bat
 * TimeDiff.bat
 * TimeInHs.bat
+* Version.bat
 
 Following tests are not yet ready:
 
@@ -43,7 +44,6 @@ Following scripts are unable to test automatically
 
 * Log.bat
 * LogSystem.bat
-* Version.bat
 
 
 <a id="TOC_Batch_scripts"></a>Batch scripts
@@ -51,7 +51,9 @@ Following scripts are unable to test automatically
 
 
 
-<hr /><a id="TOC_FormatTime"></a>FormatTime.bat
+<a id="TOC_FormatTime"><hr /></a>
+
+FormatTime.bat
 -----------------------------------------------
 
 
@@ -74,7 +76,9 @@ None
 
 
 
-<hr /><a id="TOC_GetRegValue"></a>GetRegValue.bat
+<a id="TOC_GetRegValue"><hr /></a>
+
+GetRegValue.bat
 -------------------------------------------------
 
 
@@ -93,7 +97,9 @@ None
 
 
 
-<hr /><a id="TOC_HowLong"></a>HowLong.bat
+<a id="TOC_HowLong"><hr /></a>
+
+HowLong.bat
 -----------------------------------------
 
 
@@ -109,7 +115,9 @@ ERRORLEVEL    - Number of hundredths of a second.
 
 
 
-<hr /><a id="TOC_TimeDiff"></a>TimeDiff.bat
+<a id="TOC_TimeDiff"><hr /></a>
+
+TimeDiff.bat
 -------------------------------------------
 
 
@@ -130,14 +138,9 @@ ERRORLEVEL    - Number of hundredths of a second.
 
 
 
+<a id="TOC_Sleep"><hr /></a>
 
-
-
-
-
-
-
-<hr /><a id="TOC_Sleep"></a>Sleep.bat
+Sleep.bat
 -----------------------------------------------
 
 
@@ -153,7 +156,9 @@ None
 
 
 
-<hr /><a id="TOC_TimeInHs"></a>TimeInHs.bat
+<a id="TOC_TimeInHs"><hr /></a>
+
+TimeInHs.bat
 -------------------------------------------
 
 
@@ -181,7 +186,9 @@ ERRORLEVEL    - Number of hundredths of a second counted from midnight.
 
 
 
-<hr /><a id="TOC_Version"></a>Version.bat
+<a id="TOC_Version"><hr /></a>
+
+Version.bat
 -----------------------------------------
 
 

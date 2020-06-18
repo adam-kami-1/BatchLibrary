@@ -49,8 +49,6 @@ REM ===========
 REM Run all tests
 for %%T in (*.bat) do (
   if exist test\test-%%T (
-    echo Found file: %%T
-    echo Exists test: test\test-%%T
     call :DoTest-run %%T
   )
 )

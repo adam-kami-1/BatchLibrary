@@ -1,12 +1,11 @@
 @echo off
 
-
 REM ============================================================================
 :Version
 REM ===========
 setlocal
 REM %1 - Result variable name
-set RESULT=%1
+set RESULT=%~1
 if [%RESULT%] == [] set RESULT=VERSION
 REM ===========
 for /f "tokens=1,2,3,4,5 delims=. " %%A in ('ver') do (
