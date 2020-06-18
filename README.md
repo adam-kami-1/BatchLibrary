@@ -1,28 +1,58 @@
 # BatchLibrary
 Set of useful dos prompt scripts
 
+* [Automatic tests](#TOC_Automatic_tests)
 
 * [Batch scripts](#TOC_Batch_scripts)
   * [FormatTime.bat](#TOC_FormatTime)
   * [GetRegValue.bat](#TOC_GetRegValue)
   * [HowLong.bat](#TOC_HowLong)
+  * [Sleep.bat](#TOC_Sleep)
   * [TimeDiff.bat](#TOC_TimeDiff)
   * [TimeInHs.bat](#TOC_TimeInHs)
   * [Version.bat](#TOC_Version)
 
 
 
+<a id="TOC_Automatic_tests"></a>Automatic tests
+===============================================
 
-<a id="TOC_Batch_scripts"></a>
-Batch scripts
-=============
+Test are prepared for following scripts:
+
+* FormatTime.bat
+* GetRegValue.bat
+* HowLong.bat
+* Menu.bat
+* SelectDirectory.bat
+* SelectFile.bat
+* Sleep.bat
+* TimeDiff.bat
+* TimeInHs.bat
+
+Following tests are not yet ready:
+
+* CreateShortcut.bat
+* GetPathPart.bat
+* Kill.bat
+* Run.bat
+* Which.bat
 
 
 
-<hr />
-<a id="TOC_FormatTime"></a>
-FormatTime.bat
------------
+Following scripts are unable to test automatically
+
+* Log.bat
+* LogSystem.bat
+* Version.bat
+
+
+<a id="TOC_Batch_scripts"></a>Batch scripts
+===========================================
+
+
+
+<hr /><a id="TOC_FormatTime"></a>FormatTime.bat
+-----------------------------------------------
 
 
 ### Description
@@ -44,10 +74,8 @@ None
 
 
 
-<hr />
-<a id="TOC_GetRegValue"></a>
-GetRegValue.bat
------------
+<hr /><a id="TOC_GetRegValue"></a>GetRegValue.bat
+-------------------------------------------------
 
 
 ### Description
@@ -65,10 +93,8 @@ None
 
 
 
-<hr />
-<a id="TOC_HowLong"></a>
-HowLong.bat
------------
+<hr /><a id="TOC_HowLong"></a>HowLong.bat
+-----------------------------------------
 
 
 ### Description
@@ -83,10 +109,8 @@ ERRORLEVEL    - Number of hundredths of a second.
 
 
 
-<hr />
-<a id="TOC_TimeDiff"></a>
-TimeDiff.bat
------------
+<hr /><a id="TOC_TimeDiff"></a>TimeDiff.bat
+-------------------------------------------
 
 
 ### Description
@@ -106,10 +130,31 @@ ERRORLEVEL    - Number of hundredths of a second.
 
 
 
-<hr />
-<a id="TOC_TimeInHs"></a>
-TimeInHs.bat
------------
+
+
+
+
+
+
+
+<hr /><a id="TOC_Sleep"></a>Sleep.bat
+-----------------------------------------------
+
+
+### Description
+Wait specified number of seconds.
+
+
+### Parameters
+1. Number of seconds. Invalid value is treated as 0.
+
+### Returns
+None
+
+
+
+<hr /><a id="TOC_TimeInHs"></a>TimeInHs.bat
+-------------------------------------------
 
 
 ### Description
@@ -136,10 +181,8 @@ ERRORLEVEL    - Number of hundredths of a second counted from midnight.
 
 
 
-<hr />
-<a id="TOC_Version"></a>
-Version.bat
------------
+<hr /><a id="TOC_Version"></a>Version.bat
+-----------------------------------------
 
 
 ### Description
