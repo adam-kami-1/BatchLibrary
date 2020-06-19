@@ -26,10 +26,10 @@ if "%~1" == "" (
 ) else (
   if "%~2" == "" (
     echo %~1
-    echo %~1 >> %$LOG_FILE%
+    echo %~1>> %$LOG_FILE%
   ) else (
     echo %*
-    echo %* >> %$LOG_FILE%
+    echo %*>> %$LOG_FILE%
   )
 )
 goto :EOF

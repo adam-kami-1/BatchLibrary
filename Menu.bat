@@ -65,7 +65,7 @@ for /f "tokens=1" %%A in (%TMP%\%$MENU_FILE%-SEP) do (
   if !$LINE! == 1 set "$SEP=%%A"
   set /a $LINE+=1
 )
-echo %$VALUE%^%$SEP%%$DESCR% >>"%TMP%\%$MENU_FILE%"
+echo %$VALUE%^%$SEP%%$DESCR%>>"%TMP%\%$MENU_FILE%"
 endLocal
 goto :EOF
 

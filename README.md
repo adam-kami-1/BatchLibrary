@@ -8,6 +8,7 @@ Set of useful dos prompt scripts
   * [GetPathPart.bat](#TOC_GetPathPart)
   * [GetRegValue.bat](#TOC_GetRegValue)
   * [HowLong.bat](#TOC_HowLong)
+  * [Log.bat](#TOC_Log)
   * [Menu.bat](#TOC_Menu)
   * [Sleep.bat](#TOC_Sleep)
   * [TimeDiff.bat](#TOC_TimeDiff)
@@ -157,6 +158,29 @@ Command and its parameters required to run.
 
 ### Returns
 ERRORLEVEL    - Number of hundredths of a second.
+
+
+
+<a id="TOC_Log"><hr /></a>
+
+## Log.bat
+--------------------------------------------------------------------------------
+
+
+### Description
+Simple log utility.
+
+
+### Parameters
+All parameters are logged to standard output and optionally to file
+defined in variable $LOG_FILE.
+
+
+### Depends
+
+
+### Returns
+None.
 
 
 
