@@ -21,10 +21,14 @@ for /f "tokens=1,2,3*" %%A in ('reg query "%~2" /v "%~3"') do (
   if %%B == REG_DWORD (
     REM Values are returned as hex value 0x....
     set "$result=%%C"
+    REM Convert value from hex to dec
+    set /a $result=0+$result
   )
   if %%B == REG_QWORD (
     REM Values are returned as hex value 0x....
     set "$result=%%C"
+    REM Convert value from hex to dec
+    set /a $result=0+$result
   )
 )
 

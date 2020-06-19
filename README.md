@@ -22,6 +22,7 @@ Set of useful dos prompt scripts
 Test are prepared for following scripts:
 
 * FormatTime.bat
+* GetPathPart.bat
 * GetRegValue.bat
 * HowLong.bat
 * Menu.bat
@@ -35,7 +36,6 @@ Test are prepared for following scripts:
 Following tests are not yet ready:
 
 * CreateShortcut.bat
-* GetPathPart.bat
 * Kill.bat
 * Run.bat
 
@@ -93,17 +93,19 @@ Extract selected part of a path given as a parameter.
 
 
 ### Parameters
-1 - Result variable name.
-2 - Path part code.
-    - f - *F*ully qualified path name
-    - d - *D*rive letter only
-    - p - *P*ath only
-    - n - File *n*ame without file extension or path
-    - x - File e*x*tension only
-    - a - File *a*ttributes
-    - t - File date/*t*ime
-    - z - File si*z*e
-3 - Input path.
+1. Result variable name.
+2. Path part code.
+
+    - f - **F**ully qualified path name
+    - d - **D**rive letter only
+    - p - **P**ath only
+    - n - File **n**ame without file extension or path
+    - x - File e**x**tension only
+    - a - File **a**ttributes
+    - t - File date/**t**ime
+    - z - File si**z**e
+
+3. Input path.
 
 
 ### Returns
@@ -122,13 +124,14 @@ Extract value from registry a a string.
 
 
 ### Parameters
-1 - Result variable name.
-2 - Registry key name.
-3 - Registry value name.
+1. Result variable name.
+2. Registry key name.
+3. Registry value name.
 
 
 ### Returns
-Extracted value in result variable.
+Extracted value in result variable. Values of type REG_DWORD and REG_QWORD 
+are converted to decimal.
 
 
 
