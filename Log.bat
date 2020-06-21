@@ -15,7 +15,7 @@ REM =================
 setlocal EnableDelayedExpansion
 
 set ALL=0
-set $LogLevelName[0]=
+set $LogLevelName[0]=ALL
 set CRITICAL=1
 set $LogLevelName[1]=CRITICAL
 set ERROR=2
@@ -30,12 +30,12 @@ set DEBUG=6
 set $LogLevelName[6]=DEBUG
 
 if "%$LogCurrLevel%" == "" (
+   set $LogCurrLevel=0
+)
+if "%$LogCurrLevel%" == "0" (
    set $LogMsg=%date% %time%:
    goto :LogLoop
 )
-
-REM Translate current log level name to number
-set $LogCurrLevelNo=!%$LogCurrLevel%!
 
 REM Translate first parameter to log level number
 set $LevelNo=!%~1!
@@ -43,8 +43,8 @@ set $LevelNo=!%~1!
 REM If first parameter is not valid level name then set it to 0
 set /a "$LevelNo=($LevelNo+1)-1"
 
-REM Check $LevelNo against $LogCurrLevelNo, and echo log if succesfull
-if "%$LevelNo%" GTR "%$LogCurrLevelNo%" goto :EOF
+REM Check $LevelNo against $LogCurrLevel, and echo log if succesfull
+if "%$LevelNo%" GTR "%$LogCurrLevel%" goto :EOF
 
 set "$LogMsg=%date% %time%[!$LogLevelName[%$LevelNo%]!]:"
 

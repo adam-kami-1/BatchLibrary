@@ -9,6 +9,8 @@ Set of useful dos prompt scripts
   * [GetRegValue.bat](#TOC_GetRegValue)
   * [HowLong.bat](#TOC_HowLong)
   * [Log.bat](#TOC_Log)
+  * [LogSetFile.bat](#TOC_LogSetFile)
+  * [LogSetLevel.bat](#TOC_LogSetLevel)
   * [Menu.bat](#TOC_Menu)
   * [Sleep.bat](#TOC_Sleep)
   * [TimeDiff.bat](#TOC_TimeDiff)
@@ -74,6 +76,9 @@ Decimal separator before hundredths of a second and a separator between hours, m
 depends on user settings in Windows.
 
 
+### Known limitations
+
+
 ### Depends
 [GetRegValue.bat](#TOC_GetRegValue)
 
@@ -109,6 +114,12 @@ Extract selected part of a path given as a parameter.
 3. Input path.
 
 
+### Known limitations
+
+
+### Depends
+
+
 ### Returns
 Extracted value in result variable.
 
@@ -128,6 +139,12 @@ Extract value from registry a a string.
 1. Result variable name.
 2. Registry key name.
 3. Registry value name.
+
+
+### Known limitations
+
+
+### Depends
 
 
 ### Returns
@@ -151,6 +168,9 @@ used time in human readable format.
 Command and its parameters required to run.
 
 
+### Known limitations
+
+
 ### Depends
 [FormatTime.bat](#TOC_FormatTime)
 [TimeDiff.bat](#TOC_TimeDiff)
@@ -170,11 +190,95 @@ ERRORLEVEL    - Number of hundredths of a second.
 ### Description
 Simple log utility.
 
+If current log level is not configured with [LogSetLevel.bat](#TOC_LogSetLevel)
+or configured to ALL then all parameters are displayed to standrad output.
+
+If current log level is configured to one of values: CRITICAL, ERROR, WARNING, 
+INFO, TRACE, DEBUG, then first parameter of Log.bat is treated ac message log
+level. Other parameters are displayed when message log level is less or equal
+to current log level.
+
+If Log File Name is configured with [LogSetFile.bat](#TOC_LogSetFile) then Log.bat output is also
+appended to configured log file.
+
 
 ### Parameters
-All parameters are logged to standard output and optionally to file
-defined in variable $LOG_FILE.
+If Current Log Level is ALL
+1. 2. 3. 4. ... - Log message always displayed.
 
+For all other values of Current Log Level
+1. Message Level: CRITICAL, ERROR, WARNING, INFO, TRACE, DEBUG
+2. 3. 4. ... - Log message displayed if Message Level <= Current Log Level
+
+
+### Known limitations
+- If any of leg message parameters contains one of following characters space( ), tab( ),
+comma(,), semicolon(;), or equal sign(=) then the parameter have to be surrounded with
+double quotes.
+- The message parameters can not contain double quotes, unles used to surround the 
+parameter. Double quotes will not be displayed.
+
+### Depends
+
+
+### Returns
+None.
+
+
+
+<a id="TOC_LogSetFile"><hr /></a>
+
+## LogSetFile.bat
+--------------------------------------------------------------------------------
+
+
+### Description
+Configure Log File Name to be used by [Log.bat](#TOC_Log).
+
+
+### Parameters
+1. Possible values:
+    - Empty. Display currently configured Log File Name.
+    - file name - File name to be used as Log File Name.
+    - OFF - Disable logging to file.
+
+
+### Known limitations
+
+
+### Depends
+
+
+### Returns
+None.
+
+
+
+<a id="TOC_LogSetLevel"><hr /></a>
+
+## LogSetLevel.bat
+--------------------------------------------------------------------------------
+
+
+### Description
+Configure Current Log Level to be used by [Log.bat](#TOC_Log).
+
+
+### Parameters
+1. Possible values:
+    - Empty. Display currently configured Current Log Level.
+    - New Current Log Level value:
+        - ALL - All log messages are displayed,
+        - CRITICAL - only CRITICAL log messages are displayed,
+        - ERROR - only CRITICAL and ERROR log messages are displayed,
+        - WARNING - only CRITICAL, ERROR, and WARNING log messages are displayed,
+        - INFO - only CRITICAL, ERROR, WARNING, and INFO log messages are displayed,
+        - TRACE - only CRITICAL, ERROR, WARNING, INFO, and TRACE log messages are 
+                  displayed,
+        - DEBUG - All log messages are displayed.
+
+
+### Known limitations
 
 ### Depends
 
@@ -216,6 +320,12 @@ Script used to initialize, build, run and clear simple text menu.
 
         - 2. Name of temporary menu file.
 
+### Known limitations
+
+
+### Depends
+
+
 ### Returns
 Selected item value in result variable.
 
@@ -233,6 +343,13 @@ Wait specified number of seconds.
 
 ### Parameters
 1. Number of seconds. Invalid value is treated as 0.
+
+
+### Known limitations
+
+
+### Depends
+
 
 ### Returns
 None
@@ -254,6 +371,9 @@ Calculates difference between times gives as two parameters.
 2. Second time in format: HH:MM:SS,hs or HH:MM:SS.hs.
 
 The difference Second - First time is returned in hundredths of a second.
+
+
+### Known limitations
 It is assumed that both times First and Second are in the same day, or
 the second is in the next day but then have to be smaller than First.
 
@@ -289,7 +409,12 @@ Supported time formats:
 - HH:mm:ss
 - HH.mm.ss
 
+
+### Known limitations
 For now does not support time in 12 hours format with AM/PM.
+
+
+### Depends
 
 
 ### Returns
@@ -309,6 +434,12 @@ Get the Windows version.
 
 ### Parameters
 1. Result variable name, optional. If not given VERSION is used.
+
+
+### Known limitations
+
+
+### Depends
 
 
 ### Returns

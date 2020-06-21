@@ -10,7 +10,7 @@ REM =================
 setlocal EnableDelayedExpansion
 
 set ALL=0
-set $LogLevelName[0]=
+set $LogLevelName[0]=ALL
 set CRITICAL=1
 set $LogLevelName[1]=CRITICAL
 set ERROR=2
@@ -25,25 +25,14 @@ set DEBUG=6
 set $LogLevelName[6]=DEBUG
 
 if "%~1" == "" (
-   if "%$LogCurrLevel%" == "" (
-      echo Current log level is ALL
-   ) else (
-      echo Current log level is %$LogCurrLevel%
-   )
+   echo Current log level is !$LogLevelName[%$LogCurrLevel%]!
    goto :EOF
 )
-if /i "%~1" == "ALL" (
-   set $LogCurrLevelNo=0
-) else (
-  REM Translate level name to number
-  set $LogCurrLevelNo=!%1!
-)
+REM Translate level name to log level number
+set $LogCurrLevel=!%~1!
 
-REM If first parameter was not valid level name then set $LogCurrLevelNo to ALL(0)
-set /a "$LogCurrLevelNo=($LogCurrLevelNo+1)-1"
-
-REM Store log level as a level name
-set $LogCurrLevel=!$LogLevelName[%$LogCurrLevelNo%]!
+REM If first parameter was not valid level name then set $LogCurrLevel to ALL(0)
+set /a "$LogCurrLevel=($LogCurrLevel+1)-1"
 
 endLocal & set $LogCurrLevel=%$LogCurrLevel%& exit /b
 REM =============================================================================
