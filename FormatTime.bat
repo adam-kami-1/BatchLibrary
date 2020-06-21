@@ -14,8 +14,8 @@ REM                  |  |  |           |
 REM sTime -----------+--+  +-----------+----sDecimal
 REM ===========
 setLocal
-call GetRegValue sDecimal "HKCU\Control Panel\International" sDecimal
-call GetRegValue sTime "HKCU\Control Panel\International" sTime
+call %~dp0GetRegValue sDecimal "HKCU\Control Panel\International" sDecimal
+call %~dp0GetRegValue sTime "HKCU\Control Panel\International" sTime
 set $w=%2
 set /a "$hs=%$w% %% 100"
 set /a "$w=(%$w% - %$hs%) / 100"
