@@ -25,9 +25,9 @@ if [%~3] == [] (
   set $START=%~1,%~2
   set $STOP=%~3,%~4
 )
-call TimeInHs.bat "%$START%"
+call %~dp0TimeInHs.bat "%$START%"
 set $START=%errorlevel%
-call TimeInHs.bat "%$STOP%"
+call %~dp0TimeInHs.bat "%$STOP%"
 set $STOP=%errorlevel%
 if %$START% gtr %$STOP% (
   set /a "$STOP+=24*60*60*100"
